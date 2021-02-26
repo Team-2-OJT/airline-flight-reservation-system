@@ -12,6 +12,107 @@
             <link rel="stylesheet" href="../css/style.css">
     </head>
     <style>
+    	body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%;  Full height 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
     
     </style>
 <body>
@@ -50,16 +151,18 @@
 			<img src="../img/logo1.jpg">
 			<div>
 					<ul class="navbar-nav">
-						<li class="nav-item "><a class="nav-link text-dark" href="#">Home</a></li>
-						<li class="nav-item"><a class="nav-link text-dark" href="#">About</a></li>
-						<li class="nav-item"><a class="nav-link text-dark" href="#">Services</a></li>
-						<li class="nav-item"><a class="nav-link text-dark" href="#">Login</a></li>
-						<li class="nav-item"><a class="nav-link text-dark" href="#">Contact</a></li>
-						<li><a href="" class="text-dark"><i class="fa fa-search mt-3 px-3" aria-hidden="true"></i></a></li>
+						<li class="nav-item "><button type="button" class="btn btn-light" id="">Home</button></li>
+						<li class="nav-item"><button type="button" class="btn btn-light" id="">About</button></li>
+						<li class="nav-item"><button type="button" class="btn btn-light" id="">Services</button></li>
+						<li class="nav-item"><button type="button" class="btn btn-light">Contact</button></li>
+							<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="btn btn-light">Login</button>
+						<li><button  onclick="document.getElementById('id02').style.display='block'" style="width:auto;"class="btn btn-light"><i class="fa fa-search mt-1	 px-1" aria-hidden="true"></i></button></li>
 					</ul>
 		    </div>
 		</div>	
 	</nav>
+
+
  <!-- menu section ended -->
 <!--section1 started--->
  <section>
@@ -141,6 +244,111 @@
 		</div>
 	</div>
 </section>
+
+<!--searchform-->
+<!-- <div class="container">
+--form--
+        <form class="form-group"> -->
+          <div id="id02" class="modal container ">
+  
+  <form class="modal-content animate form-group" action="<?php echo base_url()?>main/searchaction" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+            <h1 class="text-center text-white">Search Flight Details</h1>
+
+            <div id="form">
+                <h3 class="text-white">Book a Flight</h3>
+                <div id="input3">
+                    <span id="input-group" class="text-primary">Select Your Fare</span>
+                    <input type="radio" id="group" name="r">
+                    <label class="text-white" for="group">One Way</label>
+                    <input type="radio" id="group" name="r">
+                    <label class="text-white" for="group">Round Trip</label>
+                </div>
+            <div id="input">
+                <input type="text" id="group" placeholder="From">
+                <input type="text" id="group" placeholder="To">
+                <input type="date" id="group" placeholder="Departure Date">
+                <!-- <input type="text" id="group" placeholder="Departure Time"> -->
+               
+               
+                </div>
+                <!-- <div id="input2">
+                    <input type="number" id="group" placeholder="Passengers">
+                   
+                </div> -->
+               <!--  <div id="input3">
+                   
+                    <input type="radio" id="group" name="r">
+                    <label class="text-white" for="group">Armed Force</label>
+                    <input type="radio" id="group" name="r">
+                    <label class="text-white" for="group">Senior Citizen</label>
+                     <input type="radio" id="group" name="r">
+                    <label class="text-white" for="group">Family and Friends</label>
+                   
+                </div>
+                -->
+               
+                <button type="submit" class="btn btn-primary text-white">Search Flight</button>
+                <button type="reset" class="btn btn-primary">Clear Form</button>
+            </div>
+        </form>
+    </div>
+<!--search form ends-->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="<?php echo base_url()?>main/logins" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Enter Your Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="<?php echo base_url()?>main/regform">sign-up</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
 <!---section 2 ended-->
 <!--footer---->
 <footer class="text-center footer">

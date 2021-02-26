@@ -61,14 +61,14 @@ button:hover {
     <div class="row">
       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
           <div id="id01" class="col-6 modal">
-            <form  action="" method="get" class="modal-content animate border  border-2   border-dark p-5 rounded-bottom rounded bg-dark">
+            <form  action="<?php echo base_url()?>main/logins" method="POST" class="modal-content animate border  border-2   border-dark p-5 rounded-bottom rounded bg-dark">
               <div class="row mb-3">
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" placeholder="email" name="loginid" >
+                    <input type="email" class="form-control" placeholder="email" name="email" >
                 </div>
               </div>
               <div class="row mb-3">
-                <div class="col-sm-10">
+                <div class="col-10">
                   <input type="password" class="form-control" placeholder="password" name="password">
                 </div>
               </div>
