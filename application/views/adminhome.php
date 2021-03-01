@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>new</title>
+<title>Afrs</title>
 
 <style>
 *
@@ -132,22 +132,24 @@ font-size: 60px;
 <div class="submenu">
 <ul>
 <li> <a href="<?php echo base_url()?>main/addflight">Add Flight Details</a></li>
-<li> <a href="">Add Airport</a></li>
-<li> <a href="">Add Flight Status</a></li>
+<li> <a href="<?php echo base_url()?>main/airport">Add Airport</a></li>
+<li> <a href="<?php echo base_url()?>main/notification">Add Flight Status</a></li>
 </ul>
 </div>
 </li>
-<li> <a href="#">TICKETS</a>
+
 <li> <a href="#">VIEW</a>
 <div class="submenu">
 <ul>
-<li> <a href="">Registered User</a></li>
-<li> <a href="">Booked Users</a></li>
+<li> <a href="<?php echo base_url()?>main/reguserview">Registered User</a></li>
+<li> <a href="<?php echo base_url()?>main/viewbooking">Bookings</a></li>
+<li> <a href="<?php echo base_url()?>main/updateflight">Flight details</a></li>
+<li> <a href="<?php echo base_url()?>main/viewnotification">Flight Status</a></li>
 </ul>
 </div>
 </li>
 <li> <a href="#">PAYMENT DETAILS</a>
-  <li> <a href="#">LOGOUT</a>
+  <li> <a href="<?php echo base_url()?>main/logout">LOGOUT</a>
 </ul>
 </nav>
 

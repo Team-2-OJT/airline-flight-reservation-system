@@ -11,13 +11,138 @@
             <!---custom style---->
             <link rel="stylesheet" href="../css/style.css">
     </head>
+    <style>
+        *
+{
+padding:0px;
+margin:0px;
+}
+
+.menubar
+{
+background-color:rgba(0,0,0,0.5);
+text-align:center;
+
+}
+.menubar ul
+{
+list-style:none;
+display:inline-flex;
+padding:15px;
+
+}
+.menubar ul li a
+{
+text-decoration:none;
+color:white;
+padding:15px;
+}
+.menubar ul li
+{
+padding:10px;
+
+}
+.menubar ul li a:hover
+{
+background-color:green;
+border-radius:10px;
+
+}
+.submenu
+{
+display:none;
+}
+.menubar ul li:hover .submenu
+{
+display:block;
+position:absolute;
+background-color:black;
+border-radius:10px;
+
+}
+.menubar ul li:hover .submenu ul
+{
+display:block;
+}
+.submenu ul li
+{
+border-bottom:2px solid green;
+}
+.row
+{
+
+display:flex;
+}
+.col h2
+{
+text-align:center;
+text-decoration:underline;
+}
+.ft
+{
+background-color:black;
+padding:50px;
+text-align:center;
+color:white;
+}
+
+.first
+{
+background-image:url("../img/fg.jpg");
+background-size:cover;
+
+
+
+}
+h1
+{
+font-size: 60px;
+}
+
+
+
+
+</style>
 <body class="bg1">
 <!------header section---->
 <!--container-->
-<div class="container">
+<div class="container-fluid">
+    <nav class="menubar navbar-light">
+
+<ul>
+<li> <a href="<?php echo base_url()?>main/index">HOME </a></li>
+<li> <a href="#">ADD</a>
+<div class="submenu">
+<ul>
+<li> <a href="<?php echo base_url()?>main/addflight">Add Flight Details</a></li>
+<li> <a href="<?php echo base_url()?>main/airport">Add Airport</a></li>
+<li> <a href="<?php echo base_url()?>main/notification">Add Flight Status</a></li>
+</ul>
+</div>
+</li>
+
+<li> <a href="#">VIEW</a>
+<div class="submenu">
+<ul>
+<li> <a href="<?php echo base_url()?>main/reguserview">Registered User</a></li>
+<li> <a href="<?php echo base_url()?>main/viewbooking">Bookings</a></li>
+<li> <a href="<?php echo base_url()?>main/updateflight">Flight details</a></li>
+<li> <a href="<?php echo base_url()?>main/viewnotification">Flight Status</a></li>
+</ul>
+</div>
+</li>
+<li> <a href="#">PAYMENT DETAILS</a>
+  <li> <a href="<?php echo base_url()?>main/logout">LOGOUT</a>
+</ul>
+</nav>
+
+
+
+
 <!----form---->
 <form class="form-group" action="<?php echo base_url()?>main/flyinsrt" method="POST" >
-            <h1 class="text-center text-white">Admin Dashboard</h1>
+
+            <h1 class="text-center text-white">Flight Details</h1>
 
             <div id="forms" >
                 <h3 class="text-white">Flight Details</h3>
@@ -56,7 +181,7 @@
                 </div>
                
                
-                <button type="submit" class="btn btn-warning text-white" name="update" style="width: 80px;" >update</button>
+                <button type="submit" class="btn btn-warning text-white" name="update" style="width: 80px;" >Add</button>
                
             </div>
         </form>

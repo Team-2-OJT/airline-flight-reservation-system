@@ -107,72 +107,53 @@
 <!--container-->
 <div class="container">
 <!----form---->
-        <form class="form-group" method="post" action="<?php echo base_url()?>main/bookinsrt">
+        <form class="form-group">
             <h1 class="text-center text-white">Airline Booking Form</h1>
-
+             <h4 class="text-center text-white">Economic class</h4>
             <div id="form">
                 <h3 class="text-white">Booking Details</h3>
-        
-
+           
             <div id="input">
-                 <?php
-if($n->num_rows()>0)
-{
-foreach($n->result() as $row)
-{
-?>
-                <input type="text" name="from" id="group" required="" value="<?php echo $row->flyfrom;?>">
-                <input type="text" name="to" id="group" required="" value="<?php echo $row->flyto;?>">
-                <input type="text"  name="date" id="group" required="" placeholder="Departure Date" value="<?php echo $row->date;?>">
-                <input type="text"  name="flightid" id="group" required="" value="<?php echo $row->flightid;?>">
-                <!-- <input type="text" id="group" placeholder="Departure Time"> -->
-                <!-- <select name="airline" id="group" style="background: black;">
+                <input type="text" id="group" placeholder="From">
+                <input type="text" id="group" placeholder="To">
+                <input type="text" id="group" placeholder="Departure Date">
+                <input type="text" id="group" placeholder="Departure Time">
+                <select  id="group" style="background: black;">
                     <option value="">Preffered Airline</option>
-                    <option value="indigo">IndiGo</option>
-                    <option value="airindia">AirIndia</option>
-                    <option value="spacejet">SpaceJet</option>
-                </select> -->
-                 <input type="text"  name="airline" id="group" required="" placeholder="Prefered airline" value="<?php echo $row->cname;?>">
-                <select name="seating"  id="group" style="background: black;">
-                    <option value="">Preffered Seating</option>
-                    <option value="economy">Economy Class</option>
-                    <option value="business">Business Class</option>
-                    <option value="first">First Class</option>
+                    <option value="">IndoGo</option>
+                    <option value="">AirIndia</option>
+                    <option value="">SpaceJet</option>
                 </select>
-                <select name="usertype" required="" id="group" style="background: black;">
-                    <option value="">Preffered group</option>
-                    <option value="adult">Adult</option>
-                    <option value="seniour">Seniour citizen(above 60)</option>
-                    <option value="infant">infant(0-2)</option>
+                <select  id="group" style="background: black;">
+                    <option value="">Preffered Seating</option>
+                    <option value="">Economy Class</option>
+                    <option value="">Business Class</option>
+                    <option value="">First Class</option>
                 </select>
                 </div>
-               <!--  <div id="input2">
-                    <input type="number" name="adult" id="group" placeholder="Adult">
-                    <input type="number" name="child" id="group" placeholder="Children(2-11years)">
-                    <input type="number"name="infant" id="group" placeholder="infant(under 2years)">
-                    <input type="number" name="senior" id="group" placeholder="senior citizen">
-                </div> -->
+                <div id="input2">
+                    <input type="number" id="group" placeholder="Adult">
+                    <input type="number" id="group" placeholder="Children(2-11years)">
+                    <input type="number" id="group" placeholder="infant(under 2years)">
+                    <input type="number" id="group" placeholder="senior citizen">
+                </div>
                
-                <!-- <div id="input4">
-                    
+                <div id="input4">
+                    <input type="text" id="group" placeholder="Return Date">
+                    <input type="text" id="group" placeholder="Return time">
                     <input type="text" id="group1" placeholder="Any Message">
-                </div> -->
+                </div>
                 <div id="input5">
                     <h3 class="text-white">Personal Details</h3>
                 </div>
                 <div id="input6">
-                    <input name="name"type="text" id="group" required="" maxlength="30" pattern="[a-zA-Z]+" placeholder="Full Name">
-                    <input name="phone" type="number" id="group" placeholder="Phone Number" required pattern="[6-9]{1}[0-9]{9}">
-                    <input name="email" type="email" id="group1" placeholder="Email">
+                    <input type="text" id="group" placeholder="Full Name">
+                    <input type="number" id="group" placeholder="Phone Number">
+                    <input type="email" id="group1" placeholder="Email">
                 </div>
-                <input type="hidden" name="f_id" value="<?php echo $row->f_id;?>">
-                <button name="submit" type="submit" class="btn btn-warning text-white">Submit Form</button>
+                <button type="submit" class="btn btn-warning text-white">Submit Form</button>
                 <button type="reset" class="btn btn-primary">Clear Form</button>
             </div>
-            <?php
-        }
-    }
-    ?>
         </form>
     </div>
 </body>
